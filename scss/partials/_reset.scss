@@ -1,1 +1,40 @@
 @use '../partials/variables.scss' as *;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+}
+
+button {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.calculator {
+    margin-top: 15%;
+    margin-left: 37%;
+    width: 30%; height: 80%;
+    display: grid;
+    grid-template-columns: 4rem auto 4rem;
+}
+
+.displayOnly {
+    position: inherit;
+    align-items: end;
+    text-align: end;
+    height: 2.5rem;
+    width: 19rem
+}
+
+button {
+    width: 42.50px; height: 35px;
+}
+
+#clearScreen, .span-two {
+    width: 94.5px;
+}
