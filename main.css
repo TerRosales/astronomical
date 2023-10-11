@@ -9,6 +9,11 @@ html, body {
   font-weight: 700;
 }
 
+body {
+  background-image: url("/assets/bg.png");
+  background-size: cover;
+}
+
 button {
   font-family: "IBM Plex Mono", monospace;
 }
@@ -16,27 +21,44 @@ button {
 .calculator {
   margin-top: 15%;
   margin-left: 37%;
-  width: 30%;
-  height: 80%;
+  width: 35%;
+  height: 17rem;
   display: grid;
   grid-template-columns: 4rem auto 4rem;
 }
 
 .displayOnly {
-  position: inherit;
+  color: white;
+  position: relative;
   align-items: end;
   text-align: end;
   height: 2.5rem;
   width: 19rem;
 }
 
+#previousEquation {
+  color: rgba(250, 250, 150, 0.99);
+  font-size: 2.7rem;
+  margin-bottom: 0.2rem;
+  opacity: 0.5;
+}
+
+#currentEquation {
+  color: rgb(50, 250, 150);
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
 button {
-  width: 42.5px;
-  height: 35px;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 53px;
+  height: 55px;
 }
 
 #clearScreen, .span-two {
-  width: 94.5px;
+  border-radius: 48%;
+  width: 115px;
 }
 
 body {
