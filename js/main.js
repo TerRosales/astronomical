@@ -31,19 +31,6 @@ const number = event.target.textContent;
 updateCurrentEquation(number);
 }
 
-// Function handles operator clicks +, *, - , /
-function handleOperatorClick(event) {
-const operator = event.target.textContent;
-// If the operator is "%", percentage operator 
-if (operator === "%") {
-    handlePercentageClick();
-} else if (operator === "(" || operator === ")") {
-    // Function handles parentheses as multiplication
-    updateCurrentEquation(operator);
-} else {
-    updateCurrentEquation(operator);
-}
-}
 
 // Function handles decimal button click
 function handleDecimalClick() {
