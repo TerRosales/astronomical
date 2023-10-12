@@ -1,2 +1,89 @@
 @use '../partials/variables.scss' as *;
 
+
+
+.mathMeUpButton {
+    justify-content: center;
+    border-radius: 18px;
+    border: 9px outset #6605fa;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.4rem;
+    position: absolute;
+    background-color: rgba(255, 255, 255);
+    width: 11.5rem;
+    height: 8rem;
+    h4 {
+        color: #6605fa;
+        margin: 2px 6px;
+        font-size: 1rem;
+    }
+    img {
+
+        padding: 0.7rem;
+        width: 7.2rem;
+    }
+    transform: translate(5rem, 32rem);
+    transition: all 0.3s ease-in-out;
+}
+.mathMeUpButton:hover {
+    justify-content: center;
+    border-radius: 50%;
+    border: 10px inset rgba(103, 5, 250, 0.526);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.4rem;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.99);
+    width: 11.5rem;
+    height: 8rem;
+    h4 {
+        color: #6605fa;
+        margin: 2px 6px;
+        font-size: 1rem;
+    }
+    img {
+        border-radius: 35%;
+        padding: 0.7rem;
+        width: 7.2rem;
+    }
+    transform: translate(5rem, 32rem);
+}
+
+.mathMeUpButton:active {
+    background-color: rgba(102, 5, 250, 0.75);
+}
+
+.container {
+    margin-top: 10%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.displayPanel {
+    position: absolute;
+    z-index: 3;
+    margin: 5%;
+} 
+
+.displayOnly {
+    color: black;
+}
+
+#currentEquation {
+    font-size: 5rem;
+}
+
+
+
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 8000;
+    } 100% {
+        stroke-dashoffset: 0;
+    }
+}

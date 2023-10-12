@@ -1,10 +1,105 @@
-@media (max-width: 768px) {
-  .calculator {
-    width: 40% !important;
+.mathMeUpButton {
+  justify-content: center;
+  border-radius: 18px;
+  border: 9px outset #6605fa;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.4rem;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: 11.5rem;
+  height: 8rem;
+  transform: translate(5rem, 32rem);
+  transition: all 0.3s ease-in-out;
+}
+.mathMeUpButton h4 {
+  color: #6605fa;
+  margin: 2px 6px;
+  font-size: 1rem;
+}
+.mathMeUpButton img {
+  padding: 0.7rem;
+  width: 7.2rem;
+}
+
+.mathMeUpButton:hover {
+  justify-content: center;
+  border-radius: 50%;
+  border: 10px inset rgba(103, 5, 250, 0.526);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.4rem;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.99);
+  width: 11.5rem;
+  height: 8rem;
+  transform: translate(5rem, 32rem);
+}
+.mathMeUpButton:hover h4 {
+  color: #6605fa;
+  margin: 2px 6px;
+  font-size: 1rem;
+}
+.mathMeUpButton:hover img {
+  border-radius: 35%;
+  padding: 0.7rem;
+  width: 7.2rem;
+}
+
+.mathMeUpButton:active {
+  background-color: rgba(102, 5, 250, 0.75);
+}
+
+.container {
+  margin-top: 10%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.displayPanel {
+  position: absolute;
+  z-index: 3;
+  margin: 5%;
+}
+
+.displayOnly {
+  color: black;
+}
+
+#currentEquation {
+  font-size: 5rem;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 8000;
+  }
+  100% {
+    stroke-dashoffset: 0;
   }
 }
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+.svg-bg {
+  padding-top: 10%;
+  padding-left: 8%;
+  background-color: white;
+  z-index: 1;
+  opacity: 0.5;
+  position: absolute;
+  transform: scale(1.8, 1.152);
+}
+
+.svg-bg path {
+  stroke-dasharray: 8000; /* Adjust this value based on your path length */
+  stroke-dashoffset: 8000;
+  animation: draw 4s linear infinite; /* Adjust the duration as needed */
 }
 
 html, body {
@@ -12,31 +107,48 @@ html, body {
   padding: 0;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .calculator {
-  border-radius: 5px;
-  box-shadow: 10px 10px 300px 1px rgba(250, 250, 250, 0.2);
-  background: rgba(10, 10, 10, 0.95) !important;
+  z-index: 2;
+  border-radius: 15px;
+  box-shadow: -2.5px 23px 30px 2px rgba(10, 10, 10, 0.3);
+  background: rgba(210, 210, 210, 0.01) !important;
   width: -moz-fit-content;
   width: fit-content;
   height: 25rem;
+  margin: 3% auto;
   display: grid;
   grid-template-columns: 70px 70px 70px 70px;
   position: relative;
 }
 
 button {
-  border-radius: 5px;
+  border-radius: 7px;
   font-size: 1.7rem;
+  opacity: 0.5;
+}
+
+button:hover {
+  z-index: 2;
+  opacity: 0.79;
+  background-color: rgba(0, 255, 255, 0.99);
+  transform: scale(1.15);
+}
+
+button:active {
+  opacity: 0.95;
+  background-color: rgba(0, 240, 240, 0.5);
+  transform: scale(0.95);
 }
 
 #clearScreen, .span-two {
-  width: 198%;
+  width: 200%;
 }
 
 #clearScreen {
-  margin-left: 4.39rem;
+  margin-left: 4.37rem;
 }
 
 body {
