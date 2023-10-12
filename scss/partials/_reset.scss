@@ -43,19 +43,20 @@
     button {
         border-radius: 7px;
         font-size: 1.7rem;
-        opacity: 0.8;
+        opacity: 0.75;
     }
 
     button:hover {
         z-index: 2;
-        opacity: 0.85;
-        background-color: rgba(1, 132, 132, 0.99);
+        opacity: 0.79;
+        background-color: rgba(1, 132, 132, 1);
         transform: scale(1.15);
     }
 
     button:active {
+        border: 3px inset rgba(2, 2, 2, 0.75);
         opacity: 1;
-        background-color: rgba(0, 240, 240, 0.50);
+        background-color: rgba(5, 150, 150, 0.59);
         transform: scale(0.95);
     }
 

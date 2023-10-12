@@ -75,15 +75,6 @@
   font-size: 5rem;
 }
 
-@-webkit-keyframes draw {
-  0% {
-    stroke-dashoffset: 8000;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
 @keyframes draw {
   0% {
     stroke-dashoffset: 8000;
@@ -109,12 +100,7 @@
 .svg-bg path {
   stroke-dasharray: 8000;
   stroke-dashoffset: 8000;
-<<<<<<< HEAD
   animation: draw 7.5s linear forwards;
-=======
-  -webkit-animation: draw 4s linear infinite;
-          animation: draw 4s linear infinite;
->>>>>>> 241b5ff124d71a433593096a5c4105623a6c435d
 }
 
 html, body {
@@ -131,7 +117,6 @@ html, body {
   border-radius: 15px;
   box-shadow: -2.5px 23px 30px 2px rgba(10, 10, 10, 0.25);
   background: rgba(255, 255, 255, 0.01);
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   height: 25rem;
@@ -144,19 +129,20 @@ html, body {
 button {
   border-radius: 7px;
   font-size: 1.7rem;
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 button:hover {
   z-index: 2;
-  opacity: 0.85;
-  background-color: rgba(1, 132, 132, 0.99);
+  opacity: 0.79;
+  background-color: rgb(1, 132, 132);
   transform: scale(1.15);
 }
 
 button:active {
+  border: 3px inset rgba(2, 2, 2, 0.75);
   opacity: 1;
-  background-color: rgba(0, 240, 240, 0.5);
+  background-color: rgba(5, 150, 150, 0.59);
   transform: scale(0.95);
 }
 
