@@ -1,4 +1,5 @@
 .mathMeUpButton {
+  box-shadow: -2.5px 23px 30px 2px rgba(10, 10, 10, 0.29);
   justify-content: center;
   border-radius: 18px;
   border: 9px outset #6605fa;
@@ -74,6 +75,15 @@
   font-size: 5rem;
 }
 
+@-webkit-keyframes draw {
+  0% {
+    stroke-dashoffset: 8000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 @keyframes draw {
   0% {
     stroke-dashoffset: 8000;
@@ -93,16 +103,22 @@
   z-index: 1;
   opacity: 0.5;
   position: absolute;
-  transform: scale(1.8, 1.152);
+  transform: scale(1.44, 1.152);
 }
 
 .svg-bg path {
   stroke-dasharray: 8000;
   stroke-dashoffset: 8000;
+<<<<<<< HEAD
   animation: draw 7.5s linear forwards;
+=======
+  -webkit-animation: draw 4s linear infinite;
+          animation: draw 4s linear infinite;
+>>>>>>> 241b5ff124d71a433593096a5c4105623a6c435d
 }
 
 html, body {
+  overflow: hidden;
   margin: 0;
   padding: 0;
   font-family: "IBM Plex Mono", monospace;
@@ -113,8 +129,9 @@ html, body {
 .calculator {
   z-index: 2;
   border-radius: 15px;
-  box-shadow: -2.5px 23px 30px 2px rgba(10, 10, 10, 0.4);
+  box-shadow: -2.5px 23px 30px 2px rgba(10, 10, 10, 0.25);
   background: rgba(255, 255, 255, 0.01);
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   height: 25rem;
