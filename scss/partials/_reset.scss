@@ -15,9 +15,9 @@
     }
 
     .svg-bg path {
-        stroke-dasharray: 8000; /* Adjust this value based on your path length */
+        stroke-dasharray: 8000;
         stroke-dashoffset: 8000;
-        animation: draw 4s linear infinite; /* Adjust the duration as needed */
+        animation: draw 4s linear infinite; 
     }
 
     html, body {
