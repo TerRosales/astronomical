@@ -17,7 +17,7 @@
     .svg-bg path {
         stroke-dasharray: 8000;
         stroke-dashoffset: 8000;
-        animation: draw 4s linear infinite; 
+        animation: draw 7.5s linear forwards; 
     }
 
     html, body {
@@ -48,7 +48,7 @@
     button:hover {
         z-index: 2;
         opacity: 0.85;
-        background-color: rgba(0, 255, 255, 0.99);
+        background-color: rgba(1, 132, 132, 0.99);
         transform: scale(1.15);
     }
 
