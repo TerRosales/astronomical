@@ -8,44 +8,89 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;0,700;1,200;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
 <body>
-
-    <div class="calculator">
-        
-        <br>
-        
-        <div class="buttons">
-            <div data-display-previous-equation 
-                class="displayOnly" 
-                id="previousEquation">Start </div>
-            <div data-display-current-equation
-                class="displayOnly" 
-                id="currentEquation">Now</div>
-            <button data-number>7</button>
-            <button data-number>8</button>
-            <button data-number>9</button>
-            <button data-clear>C</button>
-            <button data-operator>-</button>
-            <button data-operator>+</button>
-            <button data-number>4</button>
-            <button data-number>5</button>
-            <button data-number>6</button>
-            <button data-operator>*</button>
-            <button data-equals class="span-two" id="equals">=</button>
-            <button data-number>1</button>
-            <button data-number>2</button>
-            <button data-number>3</button>
-            <button data-decimal>.</button>
-            <button data-operator>/</button>
-            <button data-operator>&percnt;</button>
-            <button class="span-two" data-number>0</button>
-            <button data-clear-all id="clearScreen"><i class="fa-solid fa-delete-left ">AC</i></button>
-            
-            
+    <div class="displayPanel">
+        <div data-display-previous-equation 
+            class="displayOnly" 
+            id="previousEquation">
+            Start 
+        </div>
+        <div data-display-current-equation
+            class="displayOnly" 
+            id="currentEquation">
+            Now
         </div>
     </div>
+
+    <div class="calculator">
+        <tr>
+            <td>
+                <button data-number>7</button>
+            </td>
+            <td>
+                <button data-number>8</button>
+            </td>
+            <td>
+                <button data-number>9</button>
+            </td>
+            <td>
+                <button data-clear>C</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button data-number>4</button>
+            </td>
+            <td>
+                <button data-number>5</button>
+            </td>
+            <td>
+                <button data-number>6</button>
+            </td>
+            <td>
+                <button data-operator>+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button data-number>1</button>
+            </td>
+            <td>
+                <button data-number>2</button>
+            </td>
+            <td>
+                <button data-number>3</button>
+            </td>
+            <td>
+                <button data-operator>-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button data-number>0</button>
+            </td>
+            <td>
+                <button data-operator>/</button>
+            </td>
+            <td>
+                <button data-decimal>.</button>
+            </td>
+            <td>
+                <button data-operator>*</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button data-equals class="span-two" id="equals">=</button>
+            </td>
+            <td id="allClearButton">
+                <button data-clear-all id="clearScreen"><i class="fa-solid fa-delete-left ">AC</i></button>
+            </td>
+        </tr>
+    </div>
+
     <script src="./js/main.js"></script>
 </body>
-</html> 
+</html>

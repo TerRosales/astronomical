@@ -12,9 +12,6 @@ button.addEventListener("click", handleOperatorClick);
 const decimalButton = document.querySelector("[data-decimal]");
 decimalButton.addEventListener("click", handleDecimalClick);
 
-const percentageButton = document.querySelector("[data-operator-percent]");
-percentageButton.addEventListener("click", handlePercentageClick);
-
 
 const clearButton = document.querySelector("[data-clear]");
 clearButton.addEventListener("click", handleClearClick);
