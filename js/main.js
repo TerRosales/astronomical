@@ -1,17 +1,16 @@
 // // Event listeners for button clicks
 // const numberButtons = document.querySelectorAll("[data-number]");
 // numberButtons.forEach((button) => {
-// button.addEventListener("click", handleNumberClick);
+//     button.addEventListener("click", handleNumberClick);
 // });
 
 // const operatorButtons = document.querySelectorAll("[data-operator]");
 // operatorButtons.forEach((button) => {
-// button.addEventListener("click", handleOperatorClick);
+//     button.addEventListener("click", handleOperatorClick);
 // });
 
 // const decimalButton = document.querySelector("[data-decimal]");
 // decimalButton.addEventListener("click", handleDecimalClick);
-
 
 // const clearButton = document.querySelector("[data-clear]");
 // clearButton.addEventListener("click", handleClearClick);
@@ -24,230 +23,221 @@
 
 // let currentEquation = ""; // stores the current equation
 // let previousEquation = ""; // stores the previous equation
+// let currentResult = "";
 
-// // Function handles button clicks
+
+
 // function handleNumberClick(event) {
-// const number = event.target.textContent;
-// updateCurrentEquation(number);
+//     const number = event.target.textContent;
+//     updateCurrentEquation(number);
 // }
 
+// function handleOperatorClick(event) {
+//     const operator = event.target.textContent;
+//     updateCurrentEquation(operator);
+// }
 
-// // Function handles decimal button click
 // function handleDecimalClick() {
-// updateCurrentEquation(".");
+//     updateCurrentEquation(".");
 // }
 
-// // Function to clear the last entry on current equation only
 // function handleClearClick() {
 //     if (typeof currentEquation === 'string' && currentEquation.length > 0) {
-//     currentEquation = currentEquation.slice(0, -1);
-//     updateCurrentDisplay();
+//         currentEquation = currentEquation.slice(0, -1);
+//         updateCurrentDisplay();
 //     }
 // }
 
-// // Function clears all previous equations
 // function handleClearAllClick() {
-// clearAll();
+//     clearAll();
 // }
 
-// // Function evaluates the current equation
 // function handleEqualsClick() {
-// evaluateEquation();
-// }
-
-// // Function updates the current equation display
-// function updateCurrentEquation(value) {
-// currentEquation += value;
-// updateCurrentDisplay();
-// }
-
-// // Function updates the display with the current equation
-// function updateCurrentDisplay() {
-// const currentEquationElement = document.getElementById("currentEquation");
-// currentEquationElement.textContent = currentEquation;
-// }
-
-// // Function calculates a percentage for the number
-// // Function handles the percentage button
-// // Function handles error display
-// function handlePercentageClick() {
-//     const equation = currentEquation.replace(/%/g, ''); // Remove percentage signs if present
-//     const parts = equation.split('/');
-    
-//     if (parts.length === 2) {
-//       const numerator = parseFloat(parts[0]);
-//       const denominator = parseFloat(parts[1]);
-      
-//       if (!isNaN(numerator) && !isNaN(denominator) && denominator !== 0) {
-//         const result = (numerator / denominator) * 100;
-//         currentEquation = result.toFixed(2) + "%"; // Display the result with two decimal places and the percentage sign
-//         updateCurrentDisplay();
+//   if (currentEquation) {
+//       if (currentResult === "") {
+//           currentResult = currentEquation;
 //       } else {
+//           currentResult = evaluateEquation(currentResult + currentEquation);
+//       }
+//       updatePreviousDisplay();
+//       currentEquation = ""; // Clear the current equation for the next input
+//       updateCurrentDisplay(currentResult);
+//   }
+// }
+
+
+// function updateCurrentEquation(value) {
+//     currentEquation += value;
+//     updateCurrentDisplay();
+// }
+
+// function updateCurrentDisplay() {
+//     const currentEquationElement = document.getElementById("currentEquation");
+//     currentEquationElement.textContent = currentEquation;
+// }
+
+// function clearAll() {
+//     currentEquation = "";
+//     previousEquation = "";
+//     updateCurrentDisplay();
+//     clearPreviousDisplay();
+// }
+
+// function clearPreviousDisplay() {
+//     const previousEquationElement = document.getElementById("previousEquation");
+//     previousEquationElement.textContent = "";
+// }
+
+// function evaluateEquation() {
+//     const previousEquationElement = document.getElementById("previousEquation");
+//     previousEquation = currentEquation;
+//     previousEquationElement.textContent = currentEquation;
+//     try {
+//         currentEquation = eval(currentEquation);
+//         updateCurrentDisplay();
+//     } catch (error) {
 //         currentEquation = "Error";
 //         updateCurrentDisplay();
-//       }
-//     } else {
-//       currentEquation = "Error";
-//       updateCurrentDisplay();
 //     }
-//   }
-
-
-// // Function that clears all display entries
-// function clearAll() {
-// currentEquation = "";
-// previousEquation = "";
-// updateCurrentDisplay();
-// clearPreviousDisplay();
 // }
 
-// // Function clears the previous equation display
-// function clearPreviousDisplay() {
-// const previousEquationElement = document.getElementById("previousEquation");
-// previousEquationElement.textContent = "";
-// }
-
-// // Function evaluates the equation
-// function evaluateEquation() {
-// const previousEquationElement = document.getElementById("previousEquation");
-// previousEquation = currentEquation;
-// previousEquationElement.textContent = currentEquation;
-// try {
-//     currentEquation = eval(currentEquation);
-//     updateCurrentDisplay();
-// } catch (error) {
-//     currentEquation = "Error";
-//     updateCurrentDisplay();
-// }
-// }
-
-// // Function clears the current equation display
 // function clearCurrentDisplay() {
-// const currentEquationElement = document.getElementById("currentEquation");
-// currentEquationElement.textContent = "";
+//     const currentEquationElement = document.getElementById("currentEquation");
+//     currentEquationElement.textContent = "";
 // }
 
+// function handleEqualsClick() {
+//   evaluateEquation();
+//   currentEquation = ""; // Clear the current equation
+// }
 
+// function updatePreviousDisplay() {
+//   const previousEquationElement = document.getElementById("previousEquation");
+//   previousEquationElement.textContent = currentResult !== "" ? currentResult + " = " + evaluateEquation(currentResult) : "";
+// }
 
+// I tried to encapsulate this
 
-
-
-// Event listeners for button clicks
-const numberButtons = document.querySelectorAll("[data-number]");
-numberButtons.forEach((button) => {
-    button.addEventListener("click", handleNumberClick);
-});
-
-const operatorButtons = document.querySelectorAll("[data-operator]");
-operatorButtons.forEach((button) => {
-    button.addEventListener("click", handleOperatorClick);
-});
-
-const decimalButton = document.querySelector("[data-decimal]");
-decimalButton.addEventListener("click", handleDecimalClick);
-
-const clearButton = document.querySelector("[data-clear]");
-clearButton.addEventListener("click", handleClearClick);
-
-const clearAllButton = document.querySelector("[data-clear-all]");
-clearAllButton.addEventListener("click", handleClearAllClick);
-
-const equalsButton = document.querySelector("[data-equals]");
-equalsButton.addEventListener("click", handleEqualsClick);
-
-let currentEquation = ""; // stores the current equation
-let previousEquation = ""; // stores the previous equation
-let currentResult = "";
-
-
-
-function handleNumberClick(event) {
-    const number = event.target.textContent;
-    updateCurrentEquation(number);
-}
-
-function handleOperatorClick(event) {
-    const operator = event.target.textContent;
-    updateCurrentEquation(operator);
-}
-
-function handleDecimalClick() {
-    updateCurrentEquation(".");
-}
-
-function handleClearClick() {
-    if (typeof currentEquation === 'string' && currentEquation.length > 0) {
-        currentEquation = currentEquation.slice(0, -1);
-        updateCurrentDisplay();
+class Calculator {
+    constructor() {
+      this.currentEquation = '';
+      this.previousEquation = '';
+      this.currentResult = '';
+  
+      // click listeners
+      const numberButtons = document.querySelectorAll('[data-number]');
+      numberButtons.forEach((button) => {
+        button.addEventListener('click', this.handleNumberClick.bind(this));
+      });
+  
+      const operatorButtons = document.querySelectorAll('[data-operator]');
+      operatorButtons.forEach((button) => {
+        button.addEventListener('click', this.handleOperatorClick.bind(this));
+      });
+  
+      const decimalButton = document.querySelector('[data-decimal]');
+      decimalButton.addEventListener('click', this.handleDecimalClick.bind(this));
+  
+      const clearButton = document.querySelector('[data-clear]');
+      clearButton.addEventListener('click', this.handleClearClick.bind(this));
+  
+      const clearAllButton = document.querySelector('[data-clear-all]');
+      clearAllButton.addEventListener('click', this.handleClearAllClick.bind(this));
+  
+      const equalsButton = document.querySelector('[data-equals]');
+      equalsButton.addEventListener('click', this.handleEqualsClick.bind(this));
+  
+      this.updateCurrentDisplay();
+      this.clearPreviousDisplay();
     }
-}
-
-function handleClearAllClick() {
-    clearAll();
-}
-
-function handleEqualsClick() {
-  if (currentEquation) {
-      if (currentResult === "") {
-          currentResult = currentEquation;
-      } else {
-          currentResult = evaluateEquation(currentResult + currentEquation);
+  
+    handleNumberClick(event) {
+      const number = event.target.textContent;
+      this.updateCurrentEquation(number);
+    }
+  
+    handleOperatorClick(event) {
+      const operator = event.target.textContent;
+      this.updateCurrentEquation(operator);
+    }
+  
+    handleDecimalClick() {
+      this.updateCurrentEquation('.');
+    }
+  
+    handleClearClick() {
+      if (typeof this.currentEquation === 'string' && this.currentEquation.length > 0) {
+        this.currentEquation = this.currentEquation.slice(0, -1);
+        this.updateCurrentDisplay();
       }
-      updatePreviousDisplay();
-      currentEquation = ""; // Clear the current equation for the next input
-      updateCurrentDisplay(currentResult);
-  }
-}
-
-
-function updateCurrentEquation(value) {
-    currentEquation += value;
-    updateCurrentDisplay();
-}
-
-function updateCurrentDisplay() {
-    const currentEquationElement = document.getElementById("currentEquation");
-    currentEquationElement.textContent = currentEquation;
-}
-
-function clearAll() {
-    currentEquation = "";
-    previousEquation = "";
-    updateCurrentDisplay();
-    clearPreviousDisplay();
-}
-
-function clearPreviousDisplay() {
-    const previousEquationElement = document.getElementById("previousEquation");
-    previousEquationElement.textContent = "";
-}
-
-function evaluateEquation() {
-    const previousEquationElement = document.getElementById("previousEquation");
-    previousEquation = currentEquation;
-    previousEquationElement.textContent = currentEquation;
-    try {
-        currentEquation = eval(currentEquation);
-        updateCurrentDisplay();
-    } catch (error) {
-        currentEquation = "Error";
-        updateCurrentDisplay();
     }
-}
-
-function clearCurrentDisplay() {
-    const currentEquationElement = document.getElementById("currentEquation");
-    currentEquationElement.textContent = "";
-}
-
-function handleEqualsClick() {
-  evaluateEquation();
-  currentEquation = ""; // Clear the current equation
-}
-
-function updatePreviousDisplay() {
-  const previousEquationElement = document.getElementById("previousEquation");
-  previousEquationElement.textContent = currentResult !== "" ? currentResult + " = " + evaluateEquation(currentResult) : "";
-}
-
-
+  
+    handleClearAllClick() {
+      this.clearAll();
+    }
+  
+    handleEqualsClick() {
+      if (this.currentEquation) {
+        if (this.currentResult === '') {
+          this.currentResult = this.currentEquation;
+        } else {
+          this.currentResult = this.evaluateEquation(this.currentResult + this.currentEquation);
+        }
+        this.updatePreviousDisplay();
+        this.currentEquation = ''; // Clear the current equation for the next input
+        this.updateCurrentDisplay(this.currentResult);
+      }
+    }
+  
+    updateCurrentEquation(value) {
+      this.currentEquation += value;
+      this.updateCurrentDisplay();
+    }
+  
+    updateCurrentDisplay(result = '') {
+      const currentEquationElement = document.getElementById('currentEquation');
+      currentEquationElement.textContent = result || this.currentEquation;
+    }
+  
+    clearAll() {
+      this.currentEquation = '';
+      this.previousEquation = '';
+      this.updateCurrentDisplay();
+      this.clearPreviousDisplay();
+    }
+  
+    clearPreviousDisplay() {
+      const previousEquationElement = document.getElementById('previousEquation');
+      previousEquationElement.textContent = '';
+    }
+  
+    evaluateEquation(equation) {
+      const previousEquationElement = document.getElementById('previousEquation');
+      this.previousEquation = equation;
+      previousEquationElement.textContent = equation;
+      try {
+        equation = eval(equation);
+        this.updateCurrentDisplay(equation);
+      } catch (error) {
+        equation = 'Error';
+        this.updateCurrentDisplay(equation);
+      }
+      return equation;
+    }
+  
+    clearCurrentDisplay() {
+      const currentEquationElement = document.getElementById('currentEquation');
+      currentEquationElement.textContent = '';
+    }
+  
+    updatePreviousDisplay() {
+      const previousEquationElement = document.getElementById('previousEquation');
+      previousEquationElement.textContent = this.currentResult !== ''
+        ? this.currentResult + ' = ' + this.evaluateEquation(this.currentResult)
+        : '';
+    }
+  }
+  
+  // Create an instance of the calculator class
+  const calculator = new Calculator();
+  
